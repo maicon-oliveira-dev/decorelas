@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estúdio Decorelas – Cotada &amp; Medidas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
 <body>
   <header class="header">
     <div class="container nav-container">
@@ -16,6 +19,7 @@
       <nav class="nav" aria-label="navigation">
         <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
         <ul id="nav-menu" class="nav-menu">
+          <li><a href="../index.html#hero">Home</a></li>
           <li><a href="../index.html#sobre">Sobre</a></li>
           <li><a href="../index.html#galeria">Galeria</a></li>
           <li><a href="../index.html#servicos">Serviços</a></li>
@@ -26,27 +30,33 @@
   </header>
 
   <section class="hero" role="banner">
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay" style="background-image: url('../assets/img/gallery3.jpg');"></div>
     <div class="container hero-content">
       <h1>Cotada &amp; Medidas</h1>
       <p>Precisão para especificações técnicas</p>
       <div class="hero-buttons">
-        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20imagens%20cotadas" class="btn btn-primary">Solicitar orçamento</a>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20imagens%20cotadas"
+          class="btn btn-primary">Solicitar orçamento</a>
       </div>
     </div>
   </section>
 
   <section class="about container">
     <h2>Cotada &amp; Medidas</h2>
-    <p>Fornecemos imagens cotadas que mostram as medidas exatas dos produtos. Esse serviço é essencial para fichas técnicas, catálogos e especificações de arquitetura e design. Nossa equipe garante que cada medida seja clara e precisa, comunicando confiança e profissionalismo.</p>
+    <p>Fornecemos imagens cotadas que mostram as medidas exatas dos produtos. Esse serviço é essencial para fichas
+      técnicas, catálogos e especificações de arquitetura e design. Nossa equipe garante que cada medida seja clara e
+      precisa, comunicando confiança e profissionalismo.</p>
   </section>
 
   <section class="gallery container">
     <h2>Galeria Cotada</h2>
     <div class="gallery-grid">
-      <figure class="gallery-item"><img src="../assets/img/gallery3.jpg" alt="Imagem cotada – poltrona com medidas"></figure>
-      <figure class="gallery-item"><img src="../assets/img/gallery1.jpg" alt="Imagem cotada – sofá com medidas"></figure>
-      <figure class="gallery-item"><img src="../assets/img/gallery5.jpg" alt="Imagem cotada – quarto com medidas"></figure>
+      <figure class="gallery-item"><img src="../assets/img/gallery3.jpg" alt="Imagem cotada – poltrona com medidas">
+      </figure>
+      <figure class="gallery-item"><img src="../assets/img/gallery1.jpg" alt="Imagem cotada – sofá com medidas">
+      </figure>
+      <figure class="gallery-item"><img src="../assets/img/gallery5.jpg" alt="Imagem cotada – quarto com medidas">
+      </figure>
     </div>
   </section>
 
@@ -68,23 +78,32 @@
         </div>
         <div class="form-group">
           <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte sobre as necessidades de cotas e medidas."></textarea>
+          <textarea id="mensagem" name="mensagem" rows="4"
+            placeholder="Conte sobre as necessidades de cotas e medidas."></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
       </form>
       <div class="contact-info">
         <h3>Fale conosco</h3>
         <p>Precisa de imagens com medidas precisas? Tire suas dúvidas e solicite via WhatsApp.</p>
-        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20imagens%20cotadas" class="whatsapp-btn">WhatsApp</a>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20imagens%20cotadas"
+          class="whatsapp-btn">WhatsApp</a>
       </div>
     </div>
   </section>
 
   <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" aria-label="Imagem ampliada">
-    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
+    <!-- Botão de navegação para imagem anterior -->
+    <button class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
+    <!-- Imagem exibida -->
     <img class="lightbox-image" src="" alt="">
+    <!-- Botão de navegação para próxima imagem -->
+    <button class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
+    <!-- Botão para fechar -->
+    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
   </div>
 
   <script src="../assets/jv/script.js"></script>
 </body>
+
 </html>

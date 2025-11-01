@@ -29,6 +29,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  /* Impede scroll horizontal */
 }
 
 body {
@@ -37,6 +39,7 @@ body {
   color: var(--text-color);
   background-color: var(--bg-color);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
@@ -299,7 +302,7 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.4);
+  background: transparent;
   border: none;
   border-radius: var(--border-radius);
   font-size: 2rem;
@@ -416,6 +419,7 @@ p {
   transform: scale(1.05);
 }
 
+
 /* Serviços */
 .services {
   padding: 4rem 0;
@@ -524,6 +528,37 @@ p {
   color: #fff;
   cursor: pointer;
 }
+
+/* Navegação dentro do lightbox */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  z-index: 210;
+  transition: var(--transition);
+}
+
+.lightbox-arrow:hover,
+.lightbox-arrow:focus {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
 
 /* Navegação responsiva */
 @media (max-width: 768px) {

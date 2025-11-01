@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- head do HTML -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Estúdio Decorelas – Fotografia Moveleira &amp; Still</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +24,7 @@
       <nav class="nav" aria-label="navigation">
         <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
         <ul id="nav-menu" class="nav-menu">
+          <li><a href="#hero">Home</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#galeria">Galeria</a></li>
           <li><a href="#servicos">Serviços</a></li>
@@ -108,7 +111,6 @@
   <section id="galeria" class="gallery container">
     <h2>Galeria</h2>
     <div class="gallery-filters" role="tablist" aria-label="Filtros da galeria">
-      <button class="filter-button active" data-filter="all">Todos</button>
       <button class="filter-button" data-filter="moveleira">Moveleira</button>
       <button class="filter-button" data-filter="still">Still</button>
     </div>
@@ -180,11 +182,17 @@
     </div>
   </section>
 
-  <!-- Lightbox overlay -->
   <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" aria-label="Imagem ampliada">
-    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
+    <!-- Botão de navegação para imagem anterior -->
+    <button class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
+    <!-- Imagem exibida -->
     <img class="lightbox-image" src="" alt="">
+    <!-- Botão de navegação para próxima imagem -->
+    <button class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
+    <!-- Botão para fechar -->
+    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
   </div>
+
 
   <!-- Script -->
   <script src="assets/jv/script.js"></script>
