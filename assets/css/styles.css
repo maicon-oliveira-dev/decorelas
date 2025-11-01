@@ -1,0 +1,670 @@
+/*
+ * Estúdio Decorelas Website Styles (Estrutura com assets)
+ *
+ * Utiliza uma paleta de tons neutros e toques dourados para transmitir
+ * elegância e permitir que as fotografias se destaquem. Essa abordagem
+ * está alinhada com a recomendação de que tons beges proporcionam uma base
+ * tranquila e sofisticada【340825748614993†L44-L64】 e com a importância de
+ * combinar tipografia decorativa e fontes legíveis para páginas de fotografia【230873608764092†L45-L60】.
+ */
+
+/* Variáveis CSS */
+:root {
+  --bg-color: #FAF5EF;
+  --primary-color: #C6A67C;
+  --primary-color-dark: #B2936B;
+  --text-color: #4A3B28;
+  --secondary-text: #6B5A44;
+  --border-radius: 8px;
+  --transition: 0.3s ease;
+  --heading-font: 'Antic Didone', serif;
+  --body-font: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-weight: 300;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--border-radius);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--heading-font);
+  color: var(--text-color);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navegação */
+.header {
+  background-color: var(--bg-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 400;
+  transition: var(--transition);
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-color-dark);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  border-radius: var(--border-radius);
+  font-weight: 400;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+  letter-spacing: 1.5px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+  z-index: -2;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+
+}
+
+.slide-content h1 {
+  letter-spacing: 1.5px;
+  color: var(--bg-color);
+}
+
+.slide-content p {
+
+  font-size: 25px;
+  margin-bottom: 1.5em;
+  color: var(--bg-color);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+  color: var(--secondary-text);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*--------------------------------------------------------------------------- 
+ * Hero slider 
+ * 
+ * Para transformar a área do hero em um carrossel de banners, definimos
+ * estilos para o contêiner (.hero-slider) e cada slide (.hero-slide). As
+ * imagens de fundo são definidas inline no HTML e suavizadas por um
+ * overlay de cor bege semitransparente para reforçar a paleta da marca.
+ * O tamanho do hero permanece 80vh por causa da regra em .hero. 
+ */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Slide visível */
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Overlay semitransparente por cima de cada slide. Utilizamos uma
+   tonalidade bege (similar à cor de fundo) para deixar as fotos mais
+   opacas sem escurecer demais e manter a elegância:contentReference[oaicite:1]{index=1}. */
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 16, 16, 0.932);
+  z-index: 0;
+}
+
+/* Conteúdo do slide aparece sobre o overlay */
+.slide-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Navegação por setas */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.4rem 0.6rem;
+  z-index: 2;
+  transition: var(--transition);
+}
+
+.hero-arrow:hover,
+.hero-arrow:focus {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.hero-prev {
+  left: 1rem;
+}
+
+.hero-next {
+  right: 1rem;
+}
+
+/* Indicadores (pontos) */
+.hero-dots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.hero-dots .hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-dots .hero-dot.active {
+  background-color: var(--primary-color);
+}
+
+
+/* Sobre */
+.about {
+  padding: 4rem 0;
+}
+
+.about p {
+  max-width: 800px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Galeria */
+.gallery {
+  padding: 4rem 0;
+}
+
+.gallery-filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-button {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.5em 1em;
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Serviços */
+.services {
+  padding: 4rem 0;
+}
+
+.services-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.services-list li {
+  background-color: #fff;
+  border: 1px solid #e8e0d3;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 400;
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.services-list li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.services-list li:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contato */
+.contact {
+  padding: 4rem 0;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #d4c9b5;
+  border-radius: var(--border-radius);
+  font-family: var(--body-font);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(198, 166, 124, 0.3);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 200;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Navegação responsiva */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  .nav-menu.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu li {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Contact section layout with WhatsApp button */
+.contact-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.contact-wrapper .contact-form {
+  flex: 1 1 300px;
+}
+
+.contact-wrapper .whatsapp-btn {
+  align-self: flex-start;
+  padding: 0.7em 1.5em;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-wrapper .whatsapp-btn:hover,
+.contact-wrapper .whatsapp-btn:focus {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Informative card alongside the contact form */
+.contact-info {
+  background-color: #fff8ee;
+  border: 1px solid var(--primary-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  max-width: 300px;
+  flex: 0 0 300px;
+}
+
+.contact-info h3 {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+}
+
+.contact-info .whatsapp-btn {
+  align-self: flex-start;
+}
+
+/*--------------------------------------------------------------------------- */
+
+
+
+
+/* Media queries para telas menores */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .slide-content h1 {
+    font-size: 2rem;
+  }
+
+  .slide-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-arrow {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 55vh;
+  }
+
+  .slide-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .slide-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    padding: 0.3em 1.0em;
+
+  }
+
+  .hero-arrow {
+    font-size: 1.4rem;
+    padding: 0.25rem 0.4rem;
+
+  }
+}

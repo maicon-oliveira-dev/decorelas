@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estúdio Decorelas – Fotografia Moveleira &amp; Still</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Font pairing chosen based on guidance that combining decorative display fonts with legible body fonts enhances photographic websites【230873608764092†L45-L60】. -->
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">Decorelas</a>
+      <nav class="nav" aria-label="navigation">
+        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato" class="btn btn-primary">Orçamento</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section id="hero" class="hero" role="banner">
+    <!--
+    O hero agora utiliza um carrossel estático de três banners, cada um
+    destacando um serviço diferente do estúdio. Para manter a altura
+    existente (80vh), o contêiner principal continua com altura fixa
+    e as imagens de fundo são definidas nas próprias divs de slide.
+    Substitua os caminhos das imagens (banner1, banner2 e banner3)
+    pelos nomes dos seus próprios arquivos na pasta `images/`.
+  -->
+    <div class="hero-slider">
+      <!-- Slide 1: Fotografia Moveleira -->
+      <div class="hero-slide active" data-index="0" style="background-image: url('assets/img/moveis1.webp');">
+        <div class="slide-content container">
+          <h1>Fotografia Moveleira Exclusiva</h1>
+          <p>Ensaio premium para móveis de alto padrão – realce cada detalhe.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20gostaria%20de%20um%20orçamento"
+              class="btn btn-primary">Solicitar orçamento</a>
+            <a href="#galeria" class="btn btn-secondary">Ver portfólio</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 2: Ambientação Digital & Catálogos -->
+      <div class="hero-slide" data-index="1" style="background-image: url('assets/img/hero.jpg');">
+        <div class="slide-content container">
+          <h1>Ambientação Digital &amp; Catálogos</h1>
+          <p>Crie cenários virtuais e catálogos que valorizam seus produtos.</p>
+          <div class="hero-buttons">
+            <a href="#servicos" class="btn btn-primary">Conheça serviços</a>
+            <a href="#contato" class="btn btn-secondary">Peça orçamento</a>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 3: Produção de Ambientes Reais -->
+      <div class="hero-slide" data-index="2" style="background-image: url('assets/img/moveis1.webp');">
+        <div class="slide-content container">
+          <h1>Produção de Ambientes Reais</h1>
+          <p>Sessões externas e interiores realistas para destacar seus móveis.</p>
+          <div class="hero-buttons">
+            <a href="#servicos" class="btn btn-primary">Agendar sessão</a>
+            <a href="#contato" class="btn btn-secondary">Falar conosco</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navegação do carrossel -->
+    <button class="hero-arrow hero-prev" aria-label="Anterior"><span aria-hidden="true">&#10094;</span></button>
+    <button class="hero-arrow hero-next" aria-label="Próximo"><span aria-hidden="true">&#10095;</span></button>
+    <div class="hero-dots" role="tablist" aria-label="Navegação do carrossel">
+      <button class="hero-dot active" type="button" data-slide="0" aria-label="Ir para slide 1"></button>
+      <button class="hero-dot" type="button" data-slide="1" aria-label="Ir para slide 2"></button>
+      <button class="hero-dot" type="button" data-slide="2" aria-label="Ir para slide 3"></button>
+    </div>
+  </section>
+
+
+  <!-- Sobre section -->
+  <section id="sobre" class="about container">
+    <h2>Sobre o Estúdio</h2>
+    <p>Somos um estúdio fotográfico especializado em <strong>Fotografia Moveleira</strong> e <strong>Still</strong>.
+      Nossa missão é entregar imagens
+      elegantes e precisas que destacam a qualidade e a beleza dos seus móveis. A escolha de uma paleta neutra – baseada
+      em tons
+      de bege e dourado – proporciona uma base tranquila que permite que seus produtos brilhem【340825748614993†L44-L64】.
+    </p>
+    <p>Nossa equipe domina técnicas de iluminação, ambientação digital e produção de cenários reais para criar
+      narrativas visuais
+      que vendem. Ao selecionar cuidadosamente tipografia e cores, buscamos evocar sentimentos de confiança e
+      sofisticação;
+      afinal, fontes e cores têm o poder de influenciar a percepção do seu público【230873608764092†L29-L33】.</p>
+  </section>
+
+  <!-- Galeria section -->
+  <section id="galeria" class="gallery container">
+    <h2>Galeria</h2>
+    <div class="gallery-filters" role="tablist" aria-label="Filtros da galeria">
+      <button class="filter-button active" data-filter="all">Todos</button>
+      <button class="filter-button" data-filter="moveleira">Moveleira</button>
+      <button class="filter-button" data-filter="still">Still</button>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-item" data-category="moveleira">
+        <img src="assets/img/gallery1.jpg" alt="Sala sofisticada com sofá bege e dourado">
+      </figure>
+      <figure class="gallery-item" data-category="moveleira">
+        <img src="assets/img/gallery2.jpg" alt="Mesa de centro dourada sobre tapete bege">
+      </figure>
+      <figure class="gallery-item" data-category="moveleira">
+        <img src="assets/img/gallery3.jpg" alt="Poltrona beige com detalhes dourados">
+      </figure>
+      <figure class="gallery-item" data-category="moveleira">
+        <img src="assets/img/gallery4.jpg" alt="Candelabro dourado acima de mesa de jantar">
+      </figure>
+      <figure class="gallery-item" data-category="moveleira">
+        <img src="assets/img/gallery5.jpg" alt="Quarto moderno em tons bege e dourado">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Serviços section -->
+  <section id="servicos" class="services container">
+    <h2>Serviços</h2>
+    <ul class="services-list">
+      <li><a href="pages/sessao-fotografica.html">Sessão fotográfica</a></li>
+      <li><a href="pages/ambientacao-digital.html">Ambientação digital</a></li>
+      <li><a href="pages/cotada.html">Cotada (medidas dos produtos)</a></li>
+      <li><a href="pages/catalogos.html">Catálogos físicos e digitais</a></li>
+      <li><a href="pages/diagramacao.html">Diagramação</a></li>
+      <li><a href="pages/producao-ambientes.html">Produção de ambientes reais</a></li>
+      <li><a href="pages/sessao-externa.html">Sessão externa</a></li>
+    </ul>
+  </section>
+
+  <!-- Contato section -->
+  <section id="contato" class="contact container">
+    <h2>Peça um orçamento</h2>
+    <div class="contact-wrapper">
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="nome">Nome*</label>
+          <input id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E‑mail*</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="telefone">WhatsApp</label>
+          <input id="telefone" name="telefone">
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4"
+            placeholder="Conte sobre o produto, prazos e uso das fotos."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <!-- Área de contato com chamada para WhatsApp -->
+      <div class="contact-info">
+        <h3>Fale conosco</h3>
+        <p>Estamos prontos para responder suas dúvidas e ajudar no seu projeto. Entre em contato diretamente pelo
+          WhatsApp.</p>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20um%20orçamento"
+          class="whatsapp-btn">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" aria-label="Imagem ampliada">
+    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
+    <img class="lightbox-image" src="" alt="">
+  </div>
+
+  <!-- Script -->
+  <script src="assets/jv/script.js"></script>
+</body>
+
+</html>

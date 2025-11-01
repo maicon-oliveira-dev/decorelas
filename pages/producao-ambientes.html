@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estúdio Decorelas – Produção de Ambientes Reais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-container">
+      <a href="../index.html#hero" class="logo">Decorelas</a>
+      <nav class="nav" aria-label="navigation">
+        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="../index.html#sobre">Sobre</a></li>
+          <li><a href="../index.html#galeria">Galeria</a></li>
+          <li><a href="../index.html#servicos">Serviços</a></li>
+          <li><a href="../index.html#contato" class="btn btn-primary">Orçamento</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" role="banner">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Produção de Ambientes Reais</h1>
+      <p>Cenários autênticos para fotografias impactantes</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20produção%20de%20ambientes" class="btn btn-primary">Solicitar orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about container">
+    <h2>Produção de Ambientes Reais</h2>
+    <p>Montamos ambientes reais com cenografia sob medida para fotografar seus produtos. Buscamos luz, composição e decoração perfeitas para refletir a essência da sua marca, proporcionando uma experiência visual autêntica e memorável.</p>
+  </section>
+
+  <section class="gallery container">
+    <h2>Galeria de Ambientes Reais</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item"><img src="../assets/img/gallery5.jpg" alt="Ambiente real – quarto elaborado"></figure>
+      <figure class="gallery-item"><img src="../assets/img/gallery1.jpg" alt="Ambiente real – sala com sofá e quadros"></figure>
+      <figure class="gallery-item"><img src="../assets/img/gallery4.jpg" alt="Ambiente real – sala com candelabro"></figure>
+      <figure class="gallery-item"><img src="../assets/img/gallery2.jpg" alt="Ambiente real – mesa de centro"></figure>
+    </div>
+  </section>
+
+  <section class="contact container">
+    <h2>Solicite um orçamento</h2>
+    <div class="contact-wrapper">
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="nome">Nome*</label>
+          <input id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E‑mail*</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="telefone">WhatsApp</label>
+          <input id="telefone" name="telefone">
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva o ambiente que deseja produzir."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <div class="contact-info">
+        <h3>Fale conosco</h3>
+        <p>Quer produzir um ambiente real? Tire dúvidas e agende conosco via WhatsApp.</p>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20produção%20de%20ambientes" class="whatsapp-btn">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" aria-label="Imagem ampliada">
+    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
+    <img class="lightbox-image" src="" alt="">
+  </div>
+
+  <script src="../assets/jv/script.js"></script>
+</body>
+</html>
