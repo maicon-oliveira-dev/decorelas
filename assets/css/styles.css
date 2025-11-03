@@ -132,7 +132,7 @@ p {
 /* Botões */
 .btn {
   display: inline-block;
-  padding: 0.7em 1.5em;
+  padding: 0.1em 1rem;
   border-radius: var(--border-radius);
   font-weight: 400;
   text-decoration: none;
@@ -145,6 +145,7 @@ p {
   background-color: var(--primary-color);
   color: #fff;
   border-color: var(--primary-color);
+  padding: 0.1em 0.1rem;
 }
 
 .btn-primary:hover,
@@ -285,7 +286,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(16, 16, 16, 0.932);
+  background: rgba(0, 0, 0, 0.712);
   z-index: 0;
 }
 
@@ -300,7 +301,7 @@ p {
 /* Navegação por setas */
 .hero-arrow {
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   background: transparent;
   border: none;
@@ -664,13 +665,22 @@ p {
   }
 
   .slide-content p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
   .hero-arrow {
     font-size: 1.5rem;
     padding: 0.3rem 0.5rem;
+  }
+
+  .hero-arrow {
+    top: 25%;
+  }
+
+  .btn {
+    padding: 2px 2px;
+
   }
 }
 
@@ -684,7 +694,7 @@ p {
   }
 
   .slide-content p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 
   .hero-buttons {
@@ -693,7 +703,7 @@ p {
   }
 
   .btn {
-    padding: 0.3em 1.0em;
+    padding: 1.5px 15px;
 
   }
 
@@ -702,4 +712,5 @@ p {
     padding: 0.25rem 0.4rem;
 
   }
+
 }
