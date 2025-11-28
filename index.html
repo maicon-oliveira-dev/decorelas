@@ -1,201 +1,413 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
   <meta charset="utf-8">
-  <!-- head do HTML -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>Estúdio Decorelas – Fotografia Moveleira &amp; Still</title>
-  <!-- Google Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Estúdio Decorelas — Fotografia Moveleira, Still e Ambientação Premium</title>
+  <meta name="description"
+    content="Estúdio Decorelas — Fotografia Moveleira e Still. Estrada Dona Francisca, 4242 — Bela Aliança. Sessões Avulsa e Completa para móveis, still, food styling, interiores, arquitetura, moda, campanhas, perfis e ensaios.">
+  <meta property="og:title" content="Estúdio Decorelas — Fotografia Moveleira, Still e Ambientação Premium">
+  <meta property="og:description"
+    content="Sessões Avulsa (ângulos específicos) e Completa (~10 fotos), direção de arte e CGI para moveleira, food, moda, interiores e campanhas.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0f0d0c">
+  <link rel="canonical" href="https://decorelas.com/">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Font pairing chosen based on guidance that combining decorative display fonts with legible body fonts enhances photographic websites【230873608764092†L45-L60】. -->
-  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Lato:wght@300;400;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <!-- Navigation bar -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="#hero" class="logo">Decorelas</a>
-      <nav class="nav" aria-label="navigation">
-        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menu">☰</button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#contato" class="btn btn-primary">Orçamento</a></li>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">Decorelas</span>
+        <span class="brand-sub">Estúdio fotográfico</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/sobre.html">Sobre</a></li>
+          <li class="nav-item-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">Serviços</button>
+            <ul class="dropdown-menu">
+              <li><a href="pages/servicos/index.html">Todos os serviços</a></li>
+              <li><a href="pages/servicos/sessao-fotografica.html">Sessão Fotográfica</a></li>
+              <li><a href="pages/servicos/ambientacao-digital.html">Ambientação Digital</a></li>
+              <li><a href="pages/servicos/cotada.html">Cotada (medidas)</a></li>
+              <li><a href="pages/servicos/catalogos.html">Catálogos</a></li>
+              <li><a href="pages/servicos/diagramacao.html">Diagramação</a></li>
+              <li><a href="pages/servicos/producao-ambientes.html">Produção de Ambientes</a></li>
+              <li><a href="pages/servicos/sessao-externa.html">Sessão Externa</a></li>
+            </ul>
+          </li>
+          <li><a href="pages/galeria.html">Galeria</a></li>
+          <li><a href="pages/contato.html">Contato</a></li>
         </ul>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20um%20orçamento"
+            aria-label="Abrir conversa no WhatsApp">WhatsApp</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <!-- Hero section -->
-  <section id="hero" class="hero" role="banner">
-    <!--
-    O hero agora utiliza um carrossel estático de três banners, cada um
-    destacando um serviço diferente do estúdio. Para manter a altura
-    existente (80vh), o contêiner principal continua com altura fixa
-    e as imagens de fundo são definidas nas próprias divs de slide.
-    Substitua os caminhos das imagens (banner1, banner2 e banner3)
-    pelos nomes dos seus próprios arquivos na pasta `images/`.
-  -->
-    <div class="hero-slider">
-      <!-- Slide 1: Fotografia Moveleira -->
-      <div class="hero-slide active" data-index="0" style="background-image: url('assets/img/moveis1.webp');">
-        <div class="slide-content container">
-          <h1>Fotografia Moveleira Exclusiva</h1>
-          <p>Ensaio premium para móveis de alto padrão – realce cada detalhe.</p>
-          <div class="hero-buttons">
-            <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20gostaria%20de%20um%20orçamento"
-              class="btn btn-primary">Solicitar orçamento</a>
-            <a href="#galeria" class="btn btn-secondary">Ver portfólio</a>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-slide active" style="background-image: url('assets/img/hero.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/img/gallery1.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('assets/img/moveis1.webp');"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow">Estúdio Decorelas — Fotografia Moveleira e Still</p>
+        <h1>Imagens editoriais para móveis, food styling, moda e interiores.</h1>
+        <p class="lead">Sessões Avulsa (ângulos específicos) ou Completa (~10 fotos por item), com direção de arte,
+          CGI, styling e luz impecável na Estrada Dona Francisca, 4242 — Bela Aliança.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary"
+            href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20agendar%20uma%20sessão%20(Avulsa%20ou%20Completa)">Agendar sessão</a>
+          <a class="btn btn-outline" href="pages/galeria.html">Ver portfólio completo</a>
+        </div>
+        <div class="hero-meta">
+          <span class="hero-pill">Avulsa (ângulos específicos)</span>
+          <span class="hero-pill">Sessão Completa (~10 fotos)</span>
+          <span class="hero-pill">Movelaria, still, food, moda, arquitetura</span>
+        </div>
+      </div>
+
+      <div class="hero-nav">
+        <button class="hero-arrow hero-prev" aria-label="Slide anterior">&#10094;</button>
+        <div class="hero-dots">
+          <button class="hero-dot active" aria-label="Hero 1"></button>
+          <button class="hero-dot" aria-label="Hero 2"></button>
+          <button class="hero-dot" aria-label="Hero 3"></button>
+        </div>
+        <button class="hero-arrow hero-next" aria-label="Próximo slide">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Serviços assinados</p>
+            <h2>Fotografia moveleira e still com sessão Avulsa ou Completa.</h2>
+            <p class="services-intro">Fluxo premium de captura, CGI e editorial para movelaria, still, food styling,
+              interiores/arquitetura, moda, campanhas, perfis e ensaios.</p>
+          </div>
+          <a class="btn btn-outline" href="pages/galeria.html">Abrir portfólio</a>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card service-card">
+            <div>
+              <span class="pill">Fotografia moveleira</span>
+              <h3>Direção de produto e lifestyle</h3>
+              <p>Avulsa ou Completa (~10 fotos/item) para coleções moveleiras, perfis e campanhas.</p>
+            </div>
+            <ul>
+              <li>Set design autoral e styling</li>
+              <li>Controle de cor e textura</li>
+              <li>Entrega pronta para mídia e e-commerce</li>
+            </ul>
+            <div class="service-footer">
+              <span class="service-price">Sob medida</span>
+              <a class="link-underline" href="pages/servicos/sessao-fotografica.html">Página do serviço</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div>
+              <span class="pill">Still &amp; produto</span>
+              <h3>Precisão técnica absoluta</h3>
+              <p>Still técnico com medidas e versões editoriais para e-commerce e catálogo.</p>
+            </div>
+            <ul>
+              <li>Fundo infinito e composições editoriais</li>
+              <li>Tratamento avançado e recorte impecável</li>
+              <li>Arquivos prontos para campanhas</li>
+            </ul>
+            <div class="service-footer">
+              <span class="service-price">Studio</span>
+              <a class="link-underline" href="pages/servicos/cotada.html">Página do serviço</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div>
+              <span class="pill">Ambienta digital</span>
+              <h3>Cenários criados sob medida</h3>
+              <p>CGI premium com direção de arte para linhas completas, alinhado à captura real.</p>
+            </div>
+            <ul>
+              <li>CGI com direção de arte unificada</li>
+              <li>Estudos de iluminação e volumetria</li>
+              <li>Entrega em alta resolução e camadas</li>
+            </ul>
+            <div class="service-footer">
+              <span class="service-price">Híbrido</span>
+              <a class="link-underline" href="pages/servicos/ambientacao-digital.html">Página do serviço</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div>
+              <span class="pill">Produção real</span>
+              <h3>Locação, luz e styling</h3>
+              <p>Ambientação em locações reais para campanhas de móveis, moda e interiores.</p>
+            </div>
+            <ul>
+              <li>Pesquisa de locação e composição</li>
+              <li>Equipe completa em campo</li>
+              <li>Entrega com lookbook e stills</li>
+            </ul>
+            <div class="service-footer">
+              <span class="service-price">On location</span>
+              <a class="link-underline" href="pages/servicos/producao-ambientes.html">Página do serviço</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div>
+              <span class="pill">Catálogos &amp; diagramação</span>
+              <h3>Arte final e narrativa visual</h3>
+              <p>Catálogos físicos e digitais com texto curado e diagramação editorial.</p>
+            </div>
+            <ul>
+              <li>Design editorial premium</li>
+              <li>Arquivos prontos para impressão e digital</li>
+              <li>Texto curado e revisão</li>
+            </ul>
+            <div class="service-footer">
+              <span class="service-price">Editorial</span>
+              <a class="link-underline" href="pages/servicos/catalogos.html">Página do serviço</a>
+            </div>
+          </article>
+
+          <article class="card service-card">
+            <div>
+              <span class="pill">Sessão externa</span>
+              <h3>Brand storytelling</h3>
+              <p>Campanhas externas e lifestyle com direção de movimento e luz natural.</p>
+            </div>
+            <ul>
+              <li>Equipe lean para velocidade</li>
+              <li>Look and feel refinado</li>
+              <li>Pacote de fotos hero + variações</li>
+            </ul>
+            <div class="service-footer">
+              <span class="service-price">Editorial</span>
+              <a class="link-underline" href="pages/servicos/sessao-externa.html">Página do serviço</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Portfólio resumido</p>
+            <h2>Volumes, texturas e luz em um recorte rápido.</h2>
+          </div>
+          <a class="btn btn-outline" href="pages/galeria.html">Abrir galeria principal</a>
+        </div>
+
+        <div class="gallery-grid" data-gallery="home">
+          <figure class="gallery-card" data-lightbox data-caption="Coleção de sofás em carvalho e linho">
+            <img src="assets/img/gallery1.jpg" loading="lazy" alt="Sofá de linho em ambiente aconchegante">
+            <figcaption class="gallery-caption">Coleção carvalho &amp; linho</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-caption="Mesa central em metal escovado e vidro fumê">
+            <img src="assets/img/gallery2.jpg" loading="lazy" alt="Mesa central dourada em sala elegante">
+            <figcaption class="gallery-caption">Still de produto</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-caption="Poltrona curvada em tom champagne">
+            <img src="assets/img/gallery3.jpg" loading="lazy" alt="Poltrona em tom champagne com iluminação suave">
+            <figcaption class="gallery-caption">Luz editorial</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-caption="Cenário digital com texturas realistas">
+            <img src="assets/img/gallery4.jpg" loading="lazy" alt="Cenário digital com texturas e luz difusa">
+            <figcaption class="gallery-caption">Ambienta digital</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-caption="Quarto com headboard em couro e madeira natural">
+            <img src="assets/img/gallery5.jpg" loading="lazy" alt="Quarto em tons off-white e madeira natural">
+            <figcaption class="gallery-caption">Editorial completo</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-caption="Close de textura com luz dramática">
+            <img src="assets/img/03_Linha-Arq-1-960x540.jpg" loading="lazy" alt="Close de textura com luz dramática">
+            <figcaption class="gallery-caption">Detalhes e matéria</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Por que Decorelas</p>
+            <h2>Precisão técnica com olhar editorial.</h2>
+          </div>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <h3>Direção de arte completa</h3>
+            <p>Planejamento, mood, casting, styling e set design em um fluxo único, com equipe fixa.</p>
+          </article>
+          <article class="why-card">
+            <h3>Color science</h3>
+            <p>Gestão de cor e textura para reproduzir materiais com fidelidade em tela e impressão.</p>
+          </article>
+          <article class="why-card">
+            <h3>Processo híbrido</h3>
+            <p>Fotografia + CGI quando faz sentido, mantendo assinatura luminosa e coerência visual.</p>
+          </article>
+          <article class="why-card">
+            <h3>Entrega pronta</h3>
+            <p>Arquivos finais com naming, variações e formatos para social, e-commerce e mídia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Processo</p>
+            <h2>Do briefing ao arquivo final, com transparência.</h2>
+          </div>
+          <a class="link-underline" href="pages/contato.html">Iniciar briefing</a>
+        </div>
+        <div class="process-grid">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Imersão</h3>
+            <p>Entendemos coleção, storytelling e canais de uso. Definimos referências e volumetria.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Pré-produção</h3>
+            <p>Roteiro visual, set design, luz, props e agenda. Tudo aprovado antes do clique.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Produção</h3>
+            <p>Execução com equipe enxuta e sênior, mantendo ritmo e consistência em todas as peças.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">04</div>
+            <h3>Pós e entrega</h3>
+            <p>Color grading fino, tratamento e export em múltiplos formatos. Toolkit pronto para uso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Depoimentos</p>
+            <h2>Clientes que confiam no nosso olhar.</h2>
+          </div>
+          <p class="muted">Slots reservados para depoimentos de clientes e arquitetos (placeholder).</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <p>“O time entrega consistência de cor e textura que raramente vemos em catálogos nacionais.”</p>
+            <strong>Cliente moveleiro</strong>
+          </article>
+          <article class="testimonial">
+            <p>“Processo ágil, direção firme e arquivos prontos para print e digital sem ajustes.”</p>
+            <strong>Diretora de marketing</strong>
+          </article>
+          <article class="testimonial">
+            <p>“A narrativa visual trouxe valor percebido e posicionamento premium para a coleção.”</p>
+            <strong>Arquiteta convidada</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <p class="eyebrow">Próximo passo</p>
+            <h2>Agende sua Sessão Avulsa ou Completa.</h2>
+            <p>Respondemos com roteiro, ângulos e investimento para moveleira, still, food, moda e interiores.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+              href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20agendar%20uma%20sessão%20(Avulsa%20ou%20Completa)">Chamar no
+              WhatsApp</a>
+            <a class="btn btn-outline" href="pages/contato.html">Briefing completo</a>
           </div>
         </div>
       </div>
-      <!-- Slide 2: Ambientação Digital & Catálogos -->
-      <div class="hero-slide" data-index="1" style="background-image: url('assets/img/hero.jpg');">
-        <div class="slide-content container">
-          <h1>Ambientação Digital &amp; Catálogos</h1>
-          <p>Crie cenários virtuais e catálogos que valorizam seus produtos.</p>
-          <div class="hero-buttons">
-            <a href="#servicos" class="btn btn-primary">Conheça serviços</a>
-            <a href="#contato" class="btn btn-secondary">Peça orçamento</a>
-          </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-mark">Estúdio Decorelas — Fotografia Moveleira e Still</div>
+          <p class="muted">Direção de arte, CGI e produção em Estrada Dona Francisca, 4242 — Bela Aliança.</p>
+        </div>
+        <div>
+          <strong>Navegação</strong>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/sobre.html">Sobre</a></li>
+            <li><a href="pages/galeria.html">Galeria</a></li>
+            <li><a href="pages/contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Serviços</strong>
+          <ul>
+            <li><a href="pages/servicos/sessao-fotografica.html">Fotografia moveleira</a></li>
+            <li><a href="pages/servicos/cotada.html">Still &amp; medidas</a></li>
+            <li><a href="pages/servicos/ambientacao-digital.html">Ambienta digital</a></li>
+            <li><a href="pages/servicos/producao-ambientes.html">Produção de ambientes</a></li>
+            <li><a href="pages/servicos/catalogos.html">Catálogos</a></li>
+            <li><a href="pages/servicos/diagramacao.html">Diagramação editorial</a></li>
+            <li><a href="pages/servicos/sessao-externa.html">Sessão externa</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Contato</strong>
+          <p>Estrada Dona Francisca, 4242 — Bela Aliança</p>
+          <p>contato@decorelas.com</p>
+          <p>+55 (00) 00000-0000</p>
+          <a class="link-underline" href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20preciso%20de%20orçamento">WhatsApp</a>
         </div>
       </div>
-      <!-- Slide 3: Produção de Ambientes Reais -->
-      <div class="hero-slide" data-index="2" style="background-image: url('assets/img/moveis1.webp');">
-        <div class="slide-content container">
-          <h1>Produção de Ambientes Reais</h1>
-          <p>Sessões externas e interiores realistas para destacar seus móveis.</p>
-          <div class="hero-buttons">
-            <a href="#servicos" class="btn btn-primary">Agendar sessão</a>
-            <a href="#contato" class="btn btn-secondary">Falar conosco</a>
-          </div>
-        </div>
-      </div>
+      <small>© Estúdio Decorelas. Fotografia premium com acabamento editorial.</small>
     </div>
-    <!-- Navegação do carrossel -->
-    <button class="hero-arrow hero-prev" aria-label="Anterior"><span aria-hidden="true">&#10094;</span></button>
-    <button class="hero-arrow hero-next" aria-label="Próximo"><span aria-hidden="true">&#10095;</span></button>
-    <div class="hero-dots" role="tablist" aria-label="Navegação do carrossel">
-      <button class="hero-dot active" type="button" data-slide="0" aria-label="Ir para slide 1"></button>
-      <button class="hero-dot" type="button" data-slide="1" aria-label="Ir para slide 2"></button>
-      <button class="hero-dot" type="button" data-slide="2" aria-label="Ir para slide 3"></button>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Fechar lightbox">&times;</button>
+      <button class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
+      <button class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
+      <img class="lightbox-image" src="" alt="">
+      <p class="lightbox-caption"></p>
     </div>
-  </section>
-
-
-  <!-- Sobre section -->
-  <section id="sobre" class="about container">
-    <h2>Sobre o Estúdio</h2>
-    <p>Somos um estúdio fotográfico especializado em <strong>Fotografia Moveleira</strong> e <strong>Still</strong>.
-      Nossa missão é entregar imagens
-      elegantes e precisas que destacam a qualidade e a beleza dos seus móveis. A escolha de uma paleta neutra – baseada
-      em tons
-      de bege e dourado – proporciona uma base tranquila que permite que seus produtos brilhem【340825748614993†L44-L64】.
-    </p>
-    <p>Nossa equipe domina técnicas de iluminação, ambientação digital e produção de cenários reais para criar
-      narrativas visuais
-      que vendem. Ao selecionar cuidadosamente tipografia e cores, buscamos evocar sentimentos de confiança e
-      sofisticação;
-      afinal, fontes e cores têm o poder de influenciar a percepção do seu público【230873608764092†L29-L33】.</p>
-  </section>
-
-  <!-- Galeria section -->
-  <section id="galeria" class="gallery container">
-    <h2>Galeria</h2>
-    <div class="gallery-filters" role="tablist" aria-label="Filtros da galeria">
-      <button class="filter-button" data-filter="moveleira">Moveleira</button>
-      <button class="filter-button" data-filter="still">Still</button>
-    </div>
-    <div class="gallery-grid">
-      <figure class="gallery-item" data-category="moveleira">
-        <img src="assets/img/gallery1.jpg" alt="Sala sofisticada com sofá bege e dourado">
-      </figure>
-      <figure class="gallery-item" data-category="moveleira">
-        <img src="assets/img/gallery2.jpg" alt="Mesa de centro dourada sobre tapete bege">
-      </figure>
-      <figure class="gallery-item" data-category="moveleira">
-        <img src="assets/img/gallery3.jpg" alt="Poltrona beige com detalhes dourados">
-      </figure>
-      <figure class="gallery-item" data-category="moveleira">
-        <img src="assets/img/gallery4.jpg" alt="Candelabro dourado acima de mesa de jantar">
-      </figure>
-      <figure class="gallery-item" data-category="moveleira">
-        <img src="assets/img/gallery5.jpg" alt="Quarto moderno em tons bege e dourado">
-      </figure>
-    </div>
-  </section>
-
-  <!-- Serviços section -->
-  <section id="servicos" class="services container">
-    <h2>Serviços</h2>
-    <ul class="services-list">
-      <li><a href="pages/sessao-fotografica.html">Sessão fotográfica</a></li>
-      <li><a href="pages/ambientacao-digital.html">Ambientação digital</a></li>
-      <li><a href="pages/cotada.html">Cotada (medidas dos produtos)</a></li>
-      <li><a href="pages/catalogos.html">Catálogos físicos e digitais</a></li>
-      <li><a href="pages/diagramacao.html">Diagramação</a></li>
-      <li><a href="pages/producao-ambientes.html">Produção de ambientes reais</a></li>
-      <li><a href="pages/sessao-externa.html">Sessão externa</a></li>
-    </ul>
-  </section>
-
-  <!-- Contato section -->
-  <section id="contato" class="contact container">
-    <h2>Peça um orçamento</h2>
-    <div class="contact-wrapper">
-      <form class="contact-form" action="#" method="post">
-        <div class="form-group">
-          <label for="nome">Nome*</label>
-          <input id="nome" name="nome" required>
-        </div>
-        <div class="form-group">
-          <label for="email">E‑mail*</label>
-          <input id="email" type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="telefone">WhatsApp</label>
-          <input id="telefone" name="telefone">
-        </div>
-        <div class="form-group">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4"
-            placeholder="Conte sobre o produto, prazos e uso das fotos."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </form>
-      <!-- Área de contato com chamada para WhatsApp -->
-      <div class="contact-info">
-        <h3>Fale conosco</h3>
-        <p>Estamos prontos para responder suas dúvidas e ajudar no seu projeto. Entre em contato diretamente pelo
-          WhatsApp.</p>
-        <a href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20um%20orçamento"
-          class="whatsapp-btn">WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <div id="lightbox" class="lightbox" aria-modal="true" role="dialog" aria-label="Imagem ampliada">
-    <!-- Botão de navegação para imagem anterior -->
-    <button class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
-    <!-- Imagem exibida -->
-    <img class="lightbox-image" src="" alt="">
-    <!-- Botão de navegação para próxima imagem -->
-    <button class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
-    <!-- Botão para fechar -->
-    <span class="lightbox-close" role="button" aria-label="Fechar">&times;</span>
   </div>
 
-
-  <!-- Script -->
-  <script src="assets/jv/script.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

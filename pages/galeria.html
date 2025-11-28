@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria — Estúdio Decorelas</title>
+  <meta name="description"
+    content="Galeria premium do Estúdio Decorelas: fotografia moveleira, still e ambientação digital.">
+  <link rel="canonical" href="https://decorelas.com/galeria">
+  <meta property="og:title" content="Galeria — Estúdio Decorelas">
+  <meta property="og:description" content="Seleção de projetos com direção de arte, luz e cor impecáveis.">
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">Decorelas</span>
+        <span class="brand-sub">Estúdio fotográfico</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li class="nav-item-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">Serviços</button>
+            <ul class="dropdown-menu">
+              <li><a href="servicos/index.html">Todos os serviços</a></li>
+              <li><a href="servicos/sessao-fotografica.html">Sessão Fotográfica</a></li>
+              <li><a href="servicos/ambientacao-digital.html">Ambientação Digital</a></li>
+              <li><a href="servicos/cotada.html">Cotada (medidas)</a></li>
+              <li><a href="servicos/catalogos.html">Catálogos</a></li>
+              <li><a href="servicos/diagramacao.html">Diagramação</a></li>
+              <li><a href="servicos/producao-ambientes.html">Produção de Ambientes</a></li>
+              <li><a href="servicos/sessao-externa.html">Sessão Externa</a></li>
+            </ul>
+          </li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn-ghost" href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20um%20orçamento">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="bg" style="background-image: url('../assets/img/gallery4.jpg');"></div>
+      <div class="container">
+        <p class="eyebrow">Galeria principal</p>
+        <h1>Uma visão curada do nosso olhar para móveis e produto.</h1>
+        <p class="lead">Do still absoluto às cenas completas com ambientação digital e locações reais.</p>
+        <div class="tag-list">
+          <span class="pill">Moveleira</span>
+          <span class="pill">Still</span>
+          <span class="pill">CGI</span>
+          <span class="pill">Editorial</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Curadoria</p>
+            <h2>Selecione por estilo de produção.</h2>
+          </div>
+          <a class="btn btn-outline" href="contato.html">Solicitar case completo</a>
+        </div>
+
+        <div class="filter-bar" data-filter-group data-filter-target="#principal-gallery">
+          <button class="filter-button active" data-filter="all">Todos</button>
+          <button class="filter-button" data-filter="moveleira">Moveleira</button>
+          <button class="filter-button" data-filter="still">Still</button>
+          <button class="filter-button" data-filter="ambientacao">Ambienta digital</button>
+          <button class="filter-button" data-filter="editorial">Editorial</button>
+        </div>
+
+        <div id="principal-gallery" class="gallery-grid" data-gallery="principal">
+          <figure class="gallery-card" data-lightbox data-category="moveleira editorial"
+            data-caption="Coleção lounge — madeira natural e off-white">
+            <img src="../assets/img/gallery1.jpg" loading="lazy" alt="Sala lounge com sofá claro e madeira natural">
+            <figcaption class="gallery-caption">Coleção lounge</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-category="still editorial"
+            data-caption="Mesa central com metal escovado e vidro fumê">
+            <img src="../assets/img/gallery2.jpg" loading="lazy" alt="Mesa central dourada e vidro fumê">
+            <figcaption class="gallery-caption">Still editorial</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-category="moveleira"
+            data-caption="Poltrona curva em tom champagne com luz dramática">
+            <img src="../assets/img/gallery3.jpg" loading="lazy" alt="Poltrona curva com luz dramática">
+            <figcaption class="gallery-caption">Hero product</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-category="ambientacao"
+            data-caption="Ambienta digital com texturas realistas e contraste suave">
+            <img src="../assets/img/gallery4.jpg" loading="lazy" alt="Ambienta digital de sala com texturas realistas">
+            <figcaption class="gallery-caption">Ambienta digital</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-category="moveleira"
+            data-caption="Suíte com headboard em couro e madeira natural">
+            <img src="../assets/img/gallery5.jpg" loading="lazy" alt="Suíte em tons off-white e madeira natural">
+            <figcaption class="gallery-caption">Editorial quarto</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-category="still"
+            data-caption="Close de textura e matéria com luz recortada">
+            <img src="../assets/img/03_Linha-Arq-1-960x540.jpg" loading="lazy"
+              alt="Close de textura com luz recortada">
+            <figcaption class="gallery-caption">Detalhe e matéria</figcaption>
+          </figure>
+          <figure class="gallery-card" data-lightbox data-category="moveleira ambientacao"
+            data-caption="Render + foto para coleção completa de living">
+            <img src="../assets/img/moveis1.webp" loading="lazy" alt="Composição de living com luz suave">
+            <figcaption class="gallery-caption">Híbrido</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Coleções recentes</p>
+            <h2>Volume, textura e cor em campanhas completas.</h2>
+          </div>
+          <a class="link-underline" href="contato.html">Receber PDF</a>
+        </div>
+        <div class="process-grid">
+          <article class="step">
+            <div class="step-number">Coleção 01</div>
+            <h3>Living + still</h3>
+            <p>Luz editorial para sofás e mesas, com stills complementares para e-commerce.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">Coleção 02</div>
+            <h3>Ambienta digital</h3>
+            <p>Cenários criados em CGI com direção de arte e integração perfeita com texturas reais.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">Coleção 03</div>
+            <h3>Catálogo completo</h3>
+            <p>Fotografia em locação real + design editorial e entrega pronta para impressão.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <p class="eyebrow">Quer ver mais?</p>
+            <h2>Enviamos cases completos e referências alinhadas ao seu produto.</h2>
+            <p>Responda com a linha ou coleção e enviamos um recorte personalizado.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20quero%20um%20case%20completo">Solicitar
+              via WhatsApp</a>
+            <a class="btn btn-outline" href="contato.html">Enviar briefing</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-mark">Decorelas</div>
+          <p class="muted">Estúdio fotográfico especializado em moveleiro, still e ambientação.</p>
+        </div>
+        <div>
+          <strong>Navegação</strong>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="politica.html">Política</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Serviços</strong>
+          <ul>
+            <li><a href="servicos/sessao-fotografica.html">Fotografia moveleira</a></li>
+            <li><a href="servicos/cotada.html">Still &amp; medidas</a></li>
+            <li><a href="servicos/ambientacao-digital.html">Ambienta digital</a></li>
+            <li><a href="servicos/producao-ambientes.html">Produção de ambientes</a></li>
+            <li><a href="servicos/catalogos.html">Catálogos</a></li>
+            <li><a href="servicos/diagramacao.html">Diagramação editorial</a></li>
+            <li><a href="servicos/sessao-externa.html">Sessão externa</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Contato</strong>
+          <p>contato@decorelas.com</p>
+          <p>+55 (00) 00000-0000</p>
+          <a class="link-underline" href="https://wa.me/55SEUNUMERO?text=Olá%20Decorelas,%20preciso%20de%20orçamento">WhatsApp</a>
+        </div>
+      </div>
+      <small>© Estúdio Decorelas.</small>
+    </div>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Fechar lightbox">&times;</button>
+      <button class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
+      <button class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
+      <img class="lightbox-image" src="" alt="">
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
