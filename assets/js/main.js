@@ -9,26 +9,30 @@ function setupNavigation() {
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.primary-nav');
   const header = document.querySelector('.site-header');
-  const navLinks = document.querySelectorAll('.nav-list a');
+  const navLinks = Array.from(nav?.querySelectorAll('a') ?? []);
   const dropdowns = Array.from(document.querySelectorAll('.nav-item-dropdown'));
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen.toString());
+  const closeNav = () => {
+    nav?.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    dropdowns.forEach((d) => {
+      d.classList.remove('open');
+      d.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
     });
-  }
+  };
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = nav?.classList.toggle('open');
+    document.body.classList.toggle('nav-open', !!isOpen);
+    toggle?.setAttribute('aria-expanded', (!!isOpen).toString());
+  });
 
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      if (nav && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        toggle?.setAttribute('aria-expanded', 'false');
+      if (nav?.classList.contains('open')) {
+        closeNav();
       }
-      dropdowns.forEach((d) => {
-        d.classList.remove('open');
-        d.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded', 'false');
-      });
     });
   });
 
@@ -60,6 +64,12 @@ function setupNavigation() {
     }
   });
 
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      closeNav();
+    }
+  });
+
   if (header) {
     const onScroll = () => {
       if (window.scrollY > 40) {
@@ -85,7 +95,11 @@ function initHeroSlider() {
 
   const setSlide = (index) => {
     current = (index + slides.length) % slides.length;
-    slides.forEach((slide, idx) => slide.classList.toggle('active', idx === current));
+    slides.forEach((slide, idx) => {
+      const isActive = idx === current;
+      slide.classList.toggle('active', isActive);
+      slide.classList.toggle('is-active', isActive);
+    });
     dots.forEach((dot, idx) => dot.classList.toggle('active', idx === current));
   };
 
