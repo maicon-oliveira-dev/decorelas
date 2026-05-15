@@ -204,6 +204,7 @@ function initLightbox() {
   const groups = new Map();
   let currentGroup = '';
   let currentIndex = 0;
+  let lastTrigger = null;
 
   containers.forEach((container) => {
     const groupKey = container.dataset.gallery || 'default';
@@ -212,18 +213,33 @@ function initLightbox() {
       groups.set(groupKey, items);
     }
     items.forEach((item, index) => {
+      const imgEl = item.querySelector('img');
+      const label = item.dataset.caption || imgEl?.alt || 'Abrir imagem em destaque';
+
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('aria-haspopup', 'dialog');
+      item.setAttribute('aria-label', label);
+
       item.addEventListener('click', () => {
-        openLightbox(groupKey, index);
+        openLightbox(groupKey, index, item);
+      });
+
+      item.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+        e.preventDefault();
+        openLightbox(groupKey, index, item);
       });
     });
   });
 
-  function openLightbox(groupKey, index) {
+  function openLightbox(groupKey, index, trigger = null) {
     const items = groups.get(groupKey);
     if (!items || !items.length || !lightbox || !lightboxImg) return;
 
     currentGroup = groupKey;
     currentIndex = (index + items.length) % items.length;
+    lastTrigger = trigger;
     const el = items[currentIndex];
     const imgEl = el.querySelector('img');
     const src = el.dataset.src || imgEl?.src || '';
@@ -234,12 +250,16 @@ function initLightbox() {
     caption && (caption.textContent = altText);
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
   }
 
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
+    if (lastTrigger instanceof HTMLElement) {
+      lastTrigger.focus();
+    }
   }
 
   function stepLightbox(delta) {
