@@ -83,7 +83,9 @@
             <a class="btn btn-primary"
               href="https://wa.me/5547933844440?text=Ola,%20gostaria%20de%20solicitar%20um%20orcamento%20para%20fotografia%20moveleira%20com%20a%20Decorelas."
               target="_blank" rel="noopener noreferrer">Solicitar orçamento no WhatsApp</a>
-            <a class="btn btn-outline colors" href="mailto:contato@decorelas.com">Enviar por email</a>
+            <a class="btn btn-outline colors" href="#formulario-orcamento-email"
+              data-form-reveal="formulario-orcamento-email" aria-controls="formulario-orcamento-email"
+              aria-expanded="false">Enviar por email</a>
           </div>
         </article>
 
@@ -102,6 +104,149 @@
           <strong>Tempo de resposta</strong>
           <p class="muted">Retornos mais rápidos no WhatsApp em dias úteis. O email funciona bem para briefings mais
             detalhados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="formulario-orcamento-email" data-form-panel
+      aria-labelledby="formulario-orcamento-email-title">
+      <div class="container">
+        <div class="form-reveal">
+          <article class="form-shell">
+            <div class="form-intro">
+              <p class="eyebrow">Briefing por email</p>
+              <h2 id="formulario-orcamento-email-title" data-form-heading tabindex="-1">Formulario de orcamento para
+                envio por email.</h2>
+              <p class="lead" id="orcamento-email-intro">Preencha as informacoes principais para que a Decorelas possa
+                entender o tipo de producao, quantidade de produtos e melhor formato de entrega.</p>
+              <p class="form-disclaimer" id="orcamento-email-note">Este formulario sera usado para envio por email
+                apos a configuracao na hospedagem. Para atendimento imediato, use o WhatsApp.</p>
+            </div>
+
+            <!-- Endpoint de envio sera configurado na hospedagem. -->
+            <form class="quote-form" method="POST" action="#" data-endpoint-pending="true"
+              aria-describedby="orcamento-email-intro orcamento-email-note orcamento-email-status">
+              <input type="hidden" name="subject" value="Novo briefing de orcamento - Decorelas">
+              <input type="hidden" name="source" value="Site Decorelas - Pagina Contato">
+
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="orcamento-website">Website</label>
+                <input type="text" id="orcamento-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="quote-form-grid">
+                <div class="form-field">
+                  <label for="orcamento-nome">Nome completo</label>
+                  <input type="text" id="orcamento-nome" name="full_name" autocomplete="name" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-empresa">Empresa / Marca</label>
+                  <input type="text" id="orcamento-empresa" name="company" autocomplete="organization">
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-email">E-mail</label>
+                  <input type="email" id="orcamento-email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-whatsapp">WhatsApp <span class="form-hint">(recomendado)</span></label>
+                  <input type="tel" id="orcamento-whatsapp" name="whatsapp" autocomplete="tel" inputmode="tel"
+                    placeholder="Ex.: +55 (47) 9 9999-9999">
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-cidade">Cidade / Estado</label>
+                  <input type="text" id="orcamento-cidade" name="city_state" autocomplete="address-level2"
+                    placeholder="Ex.: Joinville / SC">
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-servico">Tipo de servico desejado</label>
+                  <select id="orcamento-servico" name="service_type" required>
+                    <option value="">Selecione o servico</option>
+                    <option value="Fotografia Moveleira">Fotografia Moveleira</option>
+                    <option value="Fotografia Avulsa">Fotografia Avulsa</option>
+                    <option value="Sessao Completa por Produto">Sessao Completa por Produto</option>
+                    <option value="Ambientacao Digital">Ambientacao Digital</option>
+                    <option value="Imagem Cotada">Imagem Cotada</option>
+                    <option value="Catalogo de Produtos / Diagramacao">Catalogo de Produtos / Diagramacao</option>
+                    <option value="Foto Still">Foto Still</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-categoria">Categoria do produto</label>
+                  <select id="orcamento-categoria" name="product_category">
+                    <option value="">Selecione a categoria</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Grande">Grande</option>
+                    <option value="Produto geral / nao se aplica">Produto geral / nao se aplica</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-quantidade">Quantidade aproximada de produtos</label>
+                  <input type="text" id="orcamento-quantidade" name="product_quantity" inputmode="numeric"
+                    placeholder="Ex.: 12 produtos / 40 SKUs">
+                </div>
+
+                <div class="form-field">
+                  <label for="orcamento-prazo">Prazo desejado</label>
+                  <input type="text" id="orcamento-prazo" name="deadline"
+                    placeholder="Ex.: 30 dias / urgente / sem data definida">
+                </div>
+
+                <fieldset class="form-field form-field--full">
+                  <legend>Uso das imagens</legend>
+                  <div class="form-option-group">
+                    <div class="form-option-grid">
+                      <label class="form-check" for="uso-catalogo">
+                        <input type="checkbox" id="uso-catalogo" name="image_usage[]" value="Catalogo">
+                        <span>Catalogo</span>
+                      </label>
+                      <label class="form-check" for="uso-ecommerce">
+                        <input type="checkbox" id="uso-ecommerce" name="image_usage[]" value="E-commerce">
+                        <span>E-commerce</span>
+                      </label>
+                      <label class="form-check" for="uso-marketplace">
+                        <input type="checkbox" id="uso-marketplace" name="image_usage[]" value="Marketplace">
+                        <span>Marketplace</span>
+                      </label>
+                      <label class="form-check" for="uso-apresentacao">
+                        <input type="checkbox" id="uso-apresentacao" name="image_usage[]"
+                          value="Apresentacao comercial">
+                        <span>Apresentacao comercial</span>
+                      </label>
+                      <label class="form-check" for="uso-redes">
+                        <input type="checkbox" id="uso-redes" name="image_usage[]" value="Redes sociais">
+                        <span>Redes sociais</span>
+                      </label>
+                      <label class="form-check" for="uso-outro">
+                        <input type="checkbox" id="uso-outro" name="image_usage[]" value="Outro">
+                        <span>Outro</span>
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="form-field form-field--full">
+                  <label for="orcamento-mensagem">Mensagem / detalhes do briefing</label>
+                  <textarea id="orcamento-mensagem" name="message" rows="7" required
+                    placeholder="Conte sobre os produtos, volume, objetivo comercial das imagens, cidade da producao e qualquer detalhe importante para o briefing."></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Enviar briefing por email</button>
+                <p class="form-status" id="orcamento-email-status" data-form-status role="status" aria-live="polite">
+                </p>
+              </div>
+            </form>
+          </article>
         </div>
       </div>
     </section>
