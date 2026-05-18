@@ -343,12 +343,19 @@
   </footer>
 
   <div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
-    <div class="lightbox-content">
-      <button class="lightbox-close" aria-label="Fechar lightbox">&times;</button>
-      <button class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
-      <button class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
-      <img class="lightbox-image" src="" alt="">
-      <p class="lightbox-caption"></p>
+    <div class="lightbox-content" role="document">
+      <button type="button" class="lightbox-close" aria-label="Fechar lightbox">&times;</button>
+      <button type="button" class="lightbox-arrow lightbox-prev" aria-label="Imagem anterior">&#10094;</button>
+      <figure class="lightbox-figure">
+        <div class="lightbox-media">
+          <img class="lightbox-image" src="" alt="">
+        </div>
+        <figcaption class="lightbox-meta">
+          <span class="lightbox-counter" aria-live="polite"></span>
+          <p class="lightbox-caption" aria-live="polite"></p>
+        </figcaption>
+      </figure>
+      <button type="button" class="lightbox-arrow lightbox-next" aria-label="Próxima imagem">&#10095;</button>
     </div>
   </div>
 

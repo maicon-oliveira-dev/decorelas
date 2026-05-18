@@ -260,6 +260,7 @@ function initLightbox() {
   const lightbox = document.querySelector('.lightbox');
   const lightboxImg = document.querySelector('.lightbox-image');
   const caption = document.querySelector('.lightbox-caption');
+  const counter = document.querySelector('.lightbox-counter');
   const closeBtn = document.querySelector('.lightbox-close');
   const prevBtn = document.querySelector('.lightbox-prev');
   const nextBtn = document.querySelector('.lightbox-next');
@@ -268,6 +269,69 @@ function initLightbox() {
   let currentGroup = '';
   let currentIndex = 0;
   let lastTrigger = null;
+
+  const getFormatFromDimensions = (width, height) => {
+    if (!width || !height) return 'landscape';
+    const ratio = width / height;
+    if (ratio < 0.88) return 'portrait';
+    if (ratio > 1.12) return 'landscape';
+    return 'square';
+  };
+
+  const getItemPayload = (item) => {
+    const imgEl = item?.querySelector('img');
+    return {
+      imgEl,
+      src: item?.dataset.src || imgEl?.src || '',
+      altText: item?.dataset.caption || imgEl?.alt || '',
+      format: getFormatFromDimensions(
+        imgEl?.naturalWidth || imgEl?.width || 0,
+        imgEl?.naturalHeight || imgEl?.height || 0
+      )
+    };
+  };
+
+  const syncLightboxMeta = (items) => {
+    const total = items?.length || 0;
+    const hasMultiple = total > 1;
+    if (counter) {
+      counter.textContent = hasMultiple ? `${currentIndex + 1} / ${total}` : '';
+    }
+    prevBtn?.toggleAttribute('disabled', !hasMultiple);
+    nextBtn?.toggleAttribute('disabled', !hasMultiple);
+    lightbox?.setAttribute(
+      'aria-label',
+      hasMultiple ? `Visualização de imagem ${currentIndex + 1} de ${total}` : 'Visualização de imagem'
+    );
+  };
+
+  const markLightboxImageReady = (fallbackImg = null) => {
+    if (!lightbox || !lightboxImg) return;
+    const width = lightboxImg.naturalWidth || fallbackImg?.naturalWidth || fallbackImg?.width || 0;
+    const height = lightboxImg.naturalHeight || fallbackImg?.naturalHeight || fallbackImg?.height || 0;
+    lightbox.dataset.format = getFormatFromDimensions(width, height);
+    lightboxImg.classList.add('is-ready');
+  };
+
+  const setLightboxItem = (item, items) => {
+    if (!lightbox || !lightboxImg || !item) return;
+    const { imgEl, src, altText, format } = getItemPayload(item);
+    lightbox.dataset.format = format;
+    lightboxImg.classList.remove('is-ready');
+    lightboxImg.alt = altText;
+    if (caption) caption.textContent = altText;
+    syncLightboxMeta(items);
+
+    if (lightboxImg.getAttribute('src') !== src) {
+      lightboxImg.src = src;
+    } else {
+      requestAnimationFrame(() => markLightboxImageReady(imgEl));
+    }
+
+    if (lightboxImg.complete) {
+      requestAnimationFrame(() => markLightboxImageReady(imgEl));
+    }
+  };
 
   containers.forEach((container) => {
     const groupKey = container.dataset.gallery || 'default';
@@ -303,14 +367,7 @@ function initLightbox() {
     currentGroup = groupKey;
     currentIndex = (index + items.length) % items.length;
     lastTrigger = trigger;
-    const el = items[currentIndex];
-    const imgEl = el.querySelector('img');
-    const src = el.dataset.src || imgEl?.src || '';
-    const altText = el.dataset.caption || imgEl?.alt || '';
-
-    lightboxImg.src = src;
-    lightboxImg.alt = altText;
-    caption && (caption.textContent = altText);
+    setLightboxItem(items[currentIndex], items);
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
     closeBtn?.focus();
@@ -319,6 +376,9 @@ function initLightbox() {
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('open');
+    lightbox.removeAttribute('data-format');
+    lightbox.setAttribute('aria-label', 'Visualização de imagem');
+    lightboxImg?.classList.remove('is-ready');
     document.body.style.overflow = '';
     if (lastTrigger instanceof HTMLElement) {
       lastTrigger.focus();
@@ -329,17 +389,12 @@ function initLightbox() {
     const items = groups.get(currentGroup);
     if (!items || !items.length) return;
     currentIndex = (currentIndex + delta + items.length) % items.length;
-    const el = items[currentIndex];
-    const imgEl = el.querySelector('img');
-    const src = el.dataset.src || imgEl?.src || '';
-    const altText = el.dataset.caption || imgEl?.alt || '';
-
-    if (lightboxImg) {
-      lightboxImg.src = src;
-      lightboxImg.alt = altText;
-    }
-    if (caption) caption.textContent = altText;
+    setLightboxItem(items[currentIndex], items);
   }
+
+  lightboxImg?.addEventListener('load', () => {
+    markLightboxImageReady();
+  });
 
   closeBtn?.addEventListener('click', closeLightbox);
   lightbox?.addEventListener('click', (e) => {
