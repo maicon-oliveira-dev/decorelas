@@ -37,6 +37,12 @@ function setupNavigation() {
   const header = document.querySelector('.site-header');
   const navLinks = Array.from(nav?.querySelectorAll('a') ?? []);
   const dropdowns = Array.from(document.querySelectorAll('.nav-item-dropdown'));
+  const syncNavState = (isOpen) => {
+    nav?.classList.toggle('open', isOpen);
+    nav?.setAttribute('aria-hidden', (!isOpen).toString());
+    header?.classList.toggle('nav-open', isOpen);
+    document.body.classList.toggle('nav-open', isOpen);
+  };
   const updateToggleState = (isOpen) => {
     toggle?.setAttribute('aria-expanded', isOpen.toString());
     toggle?.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
@@ -46,8 +52,7 @@ function setupNavigation() {
   };
 
   const closeNav = () => {
-    nav?.classList.remove('open');
-    document.body.classList.remove('nav-open');
+    syncNavState(false);
     updateToggleState(false);
     dropdowns.forEach((d) => {
       d.classList.remove('open');
@@ -55,11 +60,12 @@ function setupNavigation() {
     });
   };
 
+  syncNavState(false);
   updateToggleState(false);
 
   toggle?.addEventListener('click', () => {
-    const isOpen = nav?.classList.toggle('open');
-    document.body.classList.toggle('nav-open', !!isOpen);
+    const isOpen = !nav?.classList.contains('open');
+    syncNavState(!!isOpen);
     updateToggleState(!!isOpen);
   });
 
@@ -88,8 +94,18 @@ function setupNavigation() {
   });
 
   document.addEventListener('click', (e) => {
-    if (!dropdowns.length) return;
     if (!(e.target instanceof Element)) return;
+    if (nav?.classList.contains('open')) {
+      const insideNav = e.target.closest('.primary-nav');
+      const insideToggle = e.target.closest('.nav-toggle');
+      if (!insideNav && !insideToggle) {
+        closeNav();
+        toggle?.focus();
+        return;
+      }
+    }
+
+    if (!dropdowns.length) return;
     const inside = e.target.closest('.nav-item-dropdown');
     if (!inside) {
       dropdowns.forEach((d) => {
